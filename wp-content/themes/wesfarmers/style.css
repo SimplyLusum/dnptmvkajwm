@@ -35,9 +35,10 @@ em { font-style:italic; }
 header { height: 25px; padding: 40px 0; }
 #logo { width: 247px; height: 23px; background-position: 0 0; float: left; }
 nav { float: right; }
-nav > a { padding: 6px 0; float: left; margin-left: 15px; color: #255f38; font-family: "futura-pt",sans-serif; font-size: 17px; text-transform: uppercase; }
-nav > a.first { margin-left: 0; }
-nav > a.active { font-weight: bold; }
+.menu-main-container > li { display: inline; }
+.menu-main-container > li > a { padding: 6px 0; float: left; margin-left: 15px; color: #255f38; font-family: "futura-pt",sans-serif; font-size: 17px; text-transform: uppercase; }
+.menu-main-container > li > a.first { margin-left: 0; }
+.menu-main-container > li > a.active { font-weight: bold; }
 
 #slideshow {
     height: 335px; 
@@ -94,11 +95,11 @@ aside { width: 300px; float: left; }
 footer { padding: 30px 0; color: #fff; border-top: 25px solid #d1ddd4; width: 100%; background: url(./img/footer-bg.png) top center repeat-x; }
 footer a { color: #fff; }
 #legalInfo { padding-bottom: 15px; }
-#footer-nav { width: 100%; border-top: 1px solid #fff; padding: 15px 0; text-align: justify; }
-#footer-nav > li { display: inline; }
-#footer-nav > li > a { text-align: left; display: inline-block; }
+.menu-footer-container { width: 100%; border-top: 1px solid #fff; padding: 15px 0; text-align: justify; float: none; }
+.menu-footer-container > li { display: inline; }
+.menu-footer-container > li > a { text-align: left; display: inline-block; }
 
-#footer-nav > li.stretch {
+.menu-footer-container > li.stretch {
     display: inline-block;
     width: 100%;
     

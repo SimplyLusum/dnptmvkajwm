@@ -2,20 +2,26 @@
         <footer>
             <div class="wrapper">
                 <p id="legalInfo">&copy; 2013 Wesfarmers Insurance.</p>
-                <ul id="footer-nav">
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Careers</a></li>
-                    <li><a href="#">Customers</a></li>
-                    <li><a href="#">Our Brands</a></li>
-                    <li><a href="#">Community</a></li>
-                    <li><a href="#">Media</a></li>
-                    <li><a href="#">Investors</a></li>
-                    <li><a href="#">Contact Us</a></li>
-                    <li><a href="#">Privacy</a></li>
-                    <li><a href="#">Terms and Conditions</a></li>
-                    <!-- ... -->
-                    <li class="stretch"></li>
-                </ul>
+<?php 
+$defaults = array(
+	'theme_location'  => '',
+	'menu'            => 'Footer',
+	'container'       => 'nav',
+	'container_class' => '',
+	'container_id'    => '',
+	'menu_class'      => '',
+	'menu_id'         => '',
+	'echo'            => true,
+	'fallback_cb'     => 'wp_page_menu',
+	'before'          => '',
+	'after'           => '',
+	'link_before'     => '',
+	'link_after'      => '',
+	'items_wrap'      => '%3$s',
+	'depth'           => 0,
+	'walker'          => ''
+);
+wp_nav_menu($defaults); ?>
             </div>
         </footer>
 

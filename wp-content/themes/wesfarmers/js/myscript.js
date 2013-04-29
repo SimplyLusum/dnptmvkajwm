@@ -5,6 +5,7 @@ $(function(){
         next: "#next"
     });
     
-    $('nav > a:first').addClass("first");
+    $('.menu-main-container > li > a:first').addClass("first");
+    $('.menu-footer-container > li:last').after('<li class="stretch"></li>');
 
 });

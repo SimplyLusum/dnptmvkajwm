@@ -33,15 +33,27 @@
             
             <a href="/" id="logo" class="sprite"></a>
             
-            <nav>
-                <a href="about-us.php"<?php if ($title == 'About Us') { echo ' class="active"'; } ?>>About Us</a>
-                <a href="careers.php"<?php if ($title == 'Careers') { echo ' class="active"'; } ?>>Careers</a>
-                <a href="customers.php"<?php if ($title == 'Customers') { echo ' class="active"'; } ?>>Customers</a>
-                <a href="our-brands.php"<?php if ($title == 'Our Brands') { echo ' class="active"'; } ?>>Our Brands</a>
-                <a href="community.php"<?php if ($title == 'Community') { echo ' class="active"'; } ?>>Community</a>
-                <a href="media.php"<?php if ($title == 'Media') { echo ' class="active"'; } ?>>Media</a>
-                <a href="investors.php"<?php if ($title == 'Investors') { echo ' class="active"'; } ?>>Investors</a>
-            </nav>
+<?php 
+$defaults = array(
+	'theme_location'  => 'Primary Menu',
+	'menu'            => 'Main',
+	'container'       => 'nav',
+	'container_class' => '',
+	'container_id'    => '',
+	'menu_class'      => '',
+	'menu_id'         => '',
+	'echo'            => true,
+	'fallback_cb'     => 'wp_page_menu',
+	'before'          => '',
+	'after'           => '',
+	'link_before'     => '',
+	'link_after'      => '',
+	'items_wrap'      => '%3$s',
+	'depth'           => 0,
+	'walker'          => ''
+);
+wp_nav_menu($defaults); ?>
+
 
         </header>
         
