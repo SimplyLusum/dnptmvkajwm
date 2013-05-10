@@ -58,21 +58,14 @@
                         <li class="last clearfix"><a href="#">More news &nbsp;&nbsp;</a></li>
                     </ul>
                 </div>
+<?php $pods = new Pod('brand'); $pods->findRecords('name ASC', 12); ?>
                 <div id="our-brands">
                     <div class="title"><span class="sprite"></span>Our brands</div>
                     <ul class="clearfix">
-                        <li><a href="#"><img src="<?php echo get_stylesheet_directory_uri(); ?>/upload/brand/1.jpg" alt="brand" /></a></li>
-                        <li><a href="#"><img src="<?php echo get_stylesheet_directory_uri(); ?>/upload/brand/2.jpg" alt="brand" /></a></li>
-                        <li><a href="#"><img src="<?php echo get_stylesheet_directory_uri(); ?>/upload/brand/3.jpg" alt="brand" /></a></li>
-                        <li><a href="#"><img src="<?php echo get_stylesheet_directory_uri(); ?>/upload/brand/4.jpg" alt="brand" /></a></li>
-                        <li><a href="#"><img src="<?php echo get_stylesheet_directory_uri(); ?>/upload/brand/5.jpg" alt="brand" /></a></li>
-                        <li><a href="#"><img src="<?php echo get_stylesheet_directory_uri(); ?>/upload/brand/6.jpg" alt="brand" /></a></li>
-                        <li><a href="#"><img src="<?php echo get_stylesheet_directory_uri(); ?>/upload/brand/7.jpg" alt="brand" /></a></li>
-                        <li><a href="#"><img src="<?php echo get_stylesheet_directory_uri(); ?>/upload/brand/8.jpg" alt="brand" /></a></li>
-                        <li><a href="#"><img src="<?php echo get_stylesheet_directory_uri(); ?>/upload/brand/9.jpg" alt="brand" /></a></li>
-                        <li><a href="#"><img src="<?php echo get_stylesheet_directory_uri(); ?>/upload/brand/10.jpg" alt="brand" /></a></li>
-                        <li><a href="#"><img src="<?php echo get_stylesheet_directory_uri(); ?>/upload/brand/11.jpg" alt="brand" /></a></li>
-                        <li><a href="#"><img src="<?php echo get_stylesheet_directory_uri(); ?>/upload/brand/12.jpg" alt="brand" /></a></li>
+                        <?php while ($pods->fetchRecord()) : ?>
+                        <?php $logo = $pods->get_field('brand_logo'); ?>
+                        <li><a href="<?php echo $pods->get_field('brand_website'); ?>" target="_blank"><img src="<?php echo $logo['0']['guid']; ?>" alt="<?php echo $pods->get_field('title'); ?>" /></a></li>
+                        <?php endwhile; ?>
                     </ul>
                 </div>
 

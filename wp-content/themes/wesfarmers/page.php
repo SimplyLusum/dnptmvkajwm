@@ -15,20 +15,13 @@
             </aside>
             
         </section>
-
+<?php $counter = 0; ?>
+<?php $pods = new Pod('brand'); $pods->findRecords('name ASC', 12); ?>
         <ul id="footer-logo" class="wrapper clearfix">
-            <li><img src="<?php echo get_stylesheet_directory_uri(); ?>/upload/brand/footer-1.jpg" alt="Brand Name" /></li>
-            <li><img src="<?php echo get_stylesheet_directory_uri(); ?>/upload/brand/footer-2.jpg" alt="Brand Name" /></li>
-            <li><img src="<?php echo get_stylesheet_directory_uri(); ?>/upload/brand/footer-3.jpg" alt="Brand Name" /></li>
-            <li><img src="<?php echo get_stylesheet_directory_uri(); ?>/upload/brand/footer-4.jpg" alt="Brand Name" /></li>
-            <li><img src="<?php echo get_stylesheet_directory_uri(); ?>/upload/brand/footer-5.jpg" alt="Brand Name" /></li>
-            <li class="last"><img src="<?php echo get_stylesheet_directory_uri(); ?>/upload/brand/footer-6.jpg" alt="Brand Name" /></li>
-            <li><img src="<?php echo get_stylesheet_directory_uri(); ?>/upload/brand/footer-7.jpg" alt="Brand Name" /></li>
-            <li><img src="<?php echo get_stylesheet_directory_uri(); ?>/upload/brand/footer-8.jpg" alt="Brand Name" /></li>
-            <li><img src="<?php echo get_stylesheet_directory_uri(); ?>/upload/brand/footer-9.jpg" alt="Brand Name" /></li>
-            <li><img src="<?php echo get_stylesheet_directory_uri(); ?>/upload/brand/footer-10.jpg" alt="Brand Name" /></li>
-            <li><img src="<?php echo get_stylesheet_directory_uri(); ?>/upload/brand/footer-11.jpg" alt="Brand Name" /></li>
-            <li class="last"><img src="<?php echo get_stylesheet_directory_uri(); ?>/upload/brand/footer-12.jpg" alt="Brand Name" /></li>
+            <?php while ($pods->fetchRecord()) : ?>
+            <?php $logo = $pods->get_field('brand_logo'); ?>
+            <li<?php echo ($counter == 5 || $counter == 11)?' class="last"':''; ?>><a href="<?php echo $pods->get_field('brand_website'); ?>" target="_blank"><img src="<?php echo $logo['0']['guid']; ?>" alt="<?php echo $pods->get_field('title'); ?>" /></a></li>
+            <?php endwhile; ?>
         </ul>
 
 <?php //get_sidebar(); ?>
