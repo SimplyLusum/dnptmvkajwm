@@ -7,6 +7,7 @@
 return array(
      'js' => array(
             '../js/lib/jquery.cycle.js',
+         '../js/lib/jquery.nailthumb.1.1.min.js',
             '../js/myscript.js'
 	  ),
      'css' => array(
