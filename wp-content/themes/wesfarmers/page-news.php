@@ -8,6 +8,18 @@
             
             <article class="clearfix">
                 <?php the_content(); ?>
+                <ul id="news-list" class="clearfix">
+<?php $counter = 0; ?>
+<?php $pods = new Pod('news'); $pods->findRecords('post_date DESC', 12); ?>
+                    <?php while ($pods->fetchRecord()) : ?>
+                    <li id="<?php echo $pods->get_field('post_name'); ?>">
+                        <div class="title"><?php echo $pods->get_field('title'); ?></div>
+                        <div class="date"><?php echo date('d/m/Y', strtotime($pods->get_field('post_date'))); ?></div>
+                        <div class="content"><?php echo $pods->get_field('content'); ?></div>
+                        <br />
+                    </li>
+                    <?php endwhile; ?>
+                </ul>
             </article>
 
             <aside>

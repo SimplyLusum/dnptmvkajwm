@@ -5,9 +5,19 @@
             
         
         <section class="wrapper clearfix">
-            
+  <?php $counter = 0; ?>
+<?php $pods = new Pod('brand'); $pods->findRecords('name ASC', 12); ?>
             <article class="clearfix">
                 <?php the_content(); ?>
+                <ul id="brand-list" class="clearfix">
+                    <?php while ($pods->fetchRecord()) : ?>
+                    <?php $logo = $pods->get_field('brand_logo'); ?>
+                    <li>
+                        <a href="<?php echo $pods->get_field('brand_website'); ?>" class="img" target="_blank"><img src="<?php echo $logo['0']['guid']; ?>" alt="<?php echo $pods->get_field('title'); ?>" /></a>
+                        <p><?php echo $pods->get_field('brand_description'); ?></p>
+                    </li>
+                    <?php endwhile; ?>
+                </ul>
             </article>
 
             <aside>

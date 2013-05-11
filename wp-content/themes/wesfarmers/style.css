@@ -95,11 +95,11 @@ aside { width: 300px; float: left; }
 footer { padding: 30px 0; color: #fff; border-top: 25px solid #d1ddd4; width: 100%; background: url(./img/footer-bg.png) top center repeat-x; }
 footer a { color: #fff; }
 #legalInfo { padding-bottom: 15px; }
-.menu-footer-container { width: 100%; border-top: 1px solid #fff; padding: 15px 0; text-align: justify; float: none; }
-.menu-footer-container > li { display: inline; }
-.menu-footer-container > li > a { text-align: left; display: inline-block; }
+#footer-nav { width: 100%; border-top: 1px solid #fff; padding: 15px 0; text-align: justify; float: none; }
+#footer-nav > li { display: inline; }
+#footer-nav > li > a { text-align: left; display: inline-block; }
 
-.menu-footer-container > li.stretch {
+#footer-nav > li.stretch {
     display: inline-block;
     width: 100%;
     
@@ -139,10 +139,26 @@ footer a { color: #fff; }
 #latest-news > ul > li { padding-bottom: 20px; }
 #latest-news > ul > li > .title { font-weight: bold; color: #002d50; padding: 0; margin: 0; }
 #latest-news > ul > li > p { padding: 0; margin: 0; }
-#latest-news > ul > li > p > a { font-weight: bold; color: #666; background: url(./img/arrow-right-grey.png) 100% 60% no-repeat; }
+#latest-news > ul > li > p > a { font-weight: bold; color: #666; background: url(/../img/arrow-right-grey.png) 100% 60% no-repeat; }
 #latest-news > ul > li.last { }
-#latest-news > ul > li.last > a { color: #046229; font-weight: bold; background: url(./img/arrow-right-green.png) 100% 60% no-repeat; }
+#latest-news > ul > li.last > a { color: #046229; font-weight: bold; background: url(/../img/arrow-right-green.png) 100% 60% no-repeat; }
 
+/* === CONTACT US === */
+#brand-list { width: 100%; }
+#brand-list > li { width: 290px; float: left; margin-bottom: 30px; margin-left: 10px; margin-right: 10px; text-align: center; }
+#brand-list > li > .img { width: 290px; float: left; margin: 0 auto; text-align: center; }
+#brand-list > li > .img > img { display: block; }
+#brand-list > li a { color: #275e37; text-decoration: underline; }
 
+/* === CONTACT US === */
+#contact-list { width: 100%; }
+#contact-list > li { width: 100%; float: left; margin-bottom: 30px; }
+#contact-list > li > .left { width: 240px; }
+#contact-list > li > .right { width: 380px; }
+#contact-list > li a { color: #275e37; text-decoration: underline; }
+
+/* === NEWS === */
+#news-list > li > .title { color: #046229; font-size: 14px; font-weight: bold; margin: 0; padding: 0; }
+#news-list > li > .content { maragin: 20px 0; }
 
 /* ------ page specific styles end ------ */

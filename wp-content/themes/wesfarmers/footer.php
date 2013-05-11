@@ -8,7 +8,7 @@ $defaults = array(
 	'menu'            => 'Footer',
 	'container'       => 'nav',
 	'container_class' => '',
-	'container_id'    => '',
+	'container_id'    => 'footer-nav',
 	'menu_class'      => '',
 	'menu_id'         => '',
 	'echo'            => true,
@@ -24,6 +24,11 @@ $defaults = array(
 wp_nav_menu($defaults); ?>
             </div>
         </footer>
+<script>
+jQuery(document).ready(function($) {
+    jQuery("#footer-nav").append('<li class="stretch"></li>');
+});
+</script>
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
         <script>!window.jQuery && document.write(unescape('%3Cscript src="<?php echo get_stylesheet_directory_uri(); ?>/js/lib/jquery.min.js"%3E%3C/script%3E'))</script>
