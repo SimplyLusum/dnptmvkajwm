@@ -35,7 +35,7 @@
                         <li class="last clearfix"><a href="/news">More news &nbsp;&nbsp;</a></li>
                     </ul>
                 </div>
-<?php $pods = new Pod('brand'); $pods->find(array('limit' => 12, 'orderby' => 'post_date DESC'));  // $pods->findRecords('post_date DESC', 12); ?>
+<?php $pods = new Pod('brand'); $pods->find(array('limit' => 13, 'orderby' => 'post_date DESC'));  // $pods->findRecords('post_date DESC', 12); ?>
                 <div id="our-brands">
                     <div class="title"><span class="sprite"></span>Our brands</div>
                     <ul class="clearfix">
