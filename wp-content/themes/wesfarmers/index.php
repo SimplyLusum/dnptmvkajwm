@@ -12,12 +12,11 @@
         </div>
 
         <section id="home" class="wrapper clearfix">
-
+                 <?php $welcomepage = get_page( 106 ) ?> 
                 <div id="welcome">
-                    
-                    <div class="title"><span class="sprite"></span>Welcome</div>
+                    <div class="title"><span class="sprite"></span><?php echo $welcomepage->post_title; ?></div>
                     <p>
-                        We are the insurance division of the Wesfarmers group, founded in 1914 as a Western Australian farmers' cooperative and now one of Australia's largest listed companies. As part of our proud Wesfarmers heritage, we have been providing insurance solutions for over 90 years.  
+                        <?php echo $welcomepage->post_content; ?>
                     </p>
                 </div>
             <?php $pods = new Pod('news'); $pods->findRecords('post_date DESC', 3); ?>
