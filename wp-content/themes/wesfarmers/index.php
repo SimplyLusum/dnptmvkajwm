@@ -1,11 +1,11 @@
 <?php get_header(); ?>
-
+        <?php $pods = new Pod('slider_image'); $pods->findRecords('slider_image_sort_order ASC', 20); ?>
         <div id="slideshow" class="wrapper">
             <div id="slider">
-                <div class="slide" style="background-image:url(/upload/slide/1.jpg);"></div>
-                <div class="slide" style="background-image:url(/upload/slide/2.jpg);"></div>
-                <div class="slide" style="background-image:url(/upload/slide/3.jpg);"></div>
-                <div class="slide" style="background-image:url(/upload/slide/4.jpg);"></div>
+                <?php while ($pods->fetchRecord()) : ?>
+                <?php $slide = $pods->get_field('slider_image'); ?>
+                <div class="slide" style="background-image:url(<?php echo $slide['0']['guid']; ?>);"></div>
+                <?php endwhile; ?>
             </div>
             <a href="javascript:;" id="prev" class="sprite"></a>
             <a href="javascript:;" id="next" class="sprite"></a>
@@ -49,5 +49,4 @@
 
         </section>
 
-<?php //get_sidebar(); ?>
 <?php get_footer(); ?>
