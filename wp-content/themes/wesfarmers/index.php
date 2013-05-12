@@ -35,13 +35,15 @@
                         <li class="last clearfix"><a href="/news">More news &nbsp;&nbsp;</a></li>
                     </ul>
                 </div>
-<?php $pods = new Pod('brand'); $pods->findRecords('name ASC', 12); ?>
+<?php $pods = new Pod('brand'); $pods->find(array('limit' => 12, 'orderby' => 'post_date DESC'));  // $pods->findRecords('post_date DESC', 12); ?>
                 <div id="our-brands">
                     <div class="title"><span class="sprite"></span>Our brands</div>
                     <ul class="clearfix">
                         <?php while ($pods->fetchRecord()) : ?>
+                        <?php if ($pods->get_field('show_in_home')) : ?>
                         <?php $logo = $pods->get_field('brand_logo'); ?>
                         <li><a href="<?php echo $pods->get_field('brand_website'); ?>" target="_blank"><img src="<?php echo $logo['0']['guid']; ?>" alt="<?php echo $pods->get_field('title'); ?>" /></a></li>
+                        <?php endif; ?>
                         <?php endwhile; ?>
                     </ul>
                 </div>
