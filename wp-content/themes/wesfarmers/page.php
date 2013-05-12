@@ -16,11 +16,14 @@
             
         </section>
 <?php $counter = 0; ?>
-<?php $pods = new Pod('brand'); $pods->findRecords('name ASC', 12); ?>
+<?php $pods = new Pod('brand'); $pods->find(array('limit' => 13, 'orderby' => 'post_date DESC')); //$pods->findRecords('name ASC', 12); ?>
         <ul id="footer-logo" class="wrapper clearfix">
             <?php while ($pods->fetchRecord()) : ?>
+            <?php if ($pods->get_field('show_in_footer')) : ?>
             <?php $logo = $pods->get_field('brand_logo'); ?>
             <li<?php echo ($counter == 5 || $counter == 11)?' class="last"':''; ?>><a href="<?php echo $pods->get_field('brand_website'); ?>" target="_blank"><img src="<?php echo $logo['0']['guid']; ?>" alt="<?php echo $pods->get_field('title'); ?>" /></a></li>
+            <?php endif; ?>
+            <?php $counter++; ?>
             <?php endwhile; ?>
         </ul>
 
