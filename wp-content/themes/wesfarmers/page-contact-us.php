@@ -6,11 +6,12 @@
         
         <section class="wrapper clearfix">
 <?php $counter = 0; ?>
-<?php $pods = new Pod('brand'); $pods->findRecords('name ASC', 12); ?>            
+<?php $pods = new Pod('brand'); $pods->find(array('orderby' => 'post_date DESC')); //$pods->findRecords('name ASC', 12); ?>            
             <article class="clearfix">
                 <?php the_content(); ?>
                 <ul id="contact-list" class="clearfix">
                     <?php while ($pods->fetchRecord()) : ?>
+                    <?php if ($pods->get_field('show_in_contact')) : ?>
                     <?php $logo = $pods->get_field('brand_logo'); ?>
                     <li>
                         <div class="left">
@@ -18,12 +19,13 @@
                         </div>
                         <div class="right">
                             <h4><?php echo $pods->get_field('title'); ?></h4>
-                            <?php echo $pods->get_field('brand_address'); ?>
-                            Telephone: <?php echo $pods->get_field('brand_phone'); ?><br />
-                            Facsimile: <?php echo $pods->get_field('brand_fax'); ?><br />
-                            Website: <a href="<?php echo $pods->get_field('brand_website'); ?>" target="_blank"><?php echo $pods->get_field('brand_website'); ?></a>
+                            <?php if ($pods->get_field('brand_address') != '') : ?><?php echo $pods->get_field('brand_address'); ?><br /><?php endif; ?>
+                            <?php if ($pods->get_field('brand_phone') != '') : ?>Telephone: <?php echo $pods->get_field('brand_phone'); ?><br /><?php endif; ?>
+                            <?php if ($pods->get_field('brand_fax') != '') : ?>Facsimile: <?php echo $pods->get_field('brand_fax'); ?><br /><?php endif; ?>
+                            <?php if ($pods->get_field('brand_website') != '') : ?>Website: <a href="<?php echo $pods->get_field('brand_website'); ?>" target="_blank"><?php echo $pods->get_field('brand_website'); ?></a><?php endif; ?>
                         </div>
                     </li>
+                    <?php endif; ?>
                     <?php endwhile; ?>
                 </ul>
             </article>
