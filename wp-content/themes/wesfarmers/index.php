@@ -3,8 +3,13 @@
         <div id="slideshow" class="wrapper">
             <div id="slider">
                 <?php while ($pods->fetchRecord()) : ?>
-                <?php $slide = $pods->get_field('slider_image'); ?>
-                <div class="slide" style="background-image:url(<?php echo $slide['0']['guid']; ?>);"></div>
+                
+
+                
+                    <?php $slide = $pods->get_field('slider_image'); ?>
+                    <a href="<?php if($pods->get_field('slider_image_link') != '') echo $pods->get_field('slider_image_link'); else echo '#'; ?>" class="slide" style="background-image:url(<?php echo $slide['0']['guid']; ?>);"></a>
+
+                
                 <?php endwhile; ?>
             </div>
             <a href="javascript:;" id="prev" class="sprite"></a>
@@ -25,7 +30,7 @@
                     <ul>
                         <?php while ($pods->fetchRecord()) : ?>
                         <li>
-                            <div class="title"><a href="/news/#<?php echo $pods->get_field('post_name'); ?>"><?php echo $pods->get_field('title'); ?></a></div>
+                            <div class="title"><a href="<?php echo $pods->get_field('guid'); ?>"><?php echo $pods->get_field('title'); ?></a></div>
                             <p>
                                 <?php echo substr($pods->get_field('content'), 0, 84).'...'; ?><br />
                                 <a href="/news">Read more &nbsp;&nbsp;</a>
