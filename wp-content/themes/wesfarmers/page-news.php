@@ -15,7 +15,15 @@
                     <li id="<?php echo $pods->get_field('post_name'); ?>">
                         <div class="title"><?php echo $pods->get_field('title'); ?></div>
                         <div class="date"><?php echo date('d/m/Y', strtotime($pods->get_field('post_date'))); ?></div>
-                        <div class="content"><?php echo $pods->get_field('content'); ?></div>
+                        <?php $content = $pods->get_field('content'); 
+                        if (strlen($content) > 164) {
+                            $trailer = '...';
+                        } else {
+                            $trailer = '';
+                        }
+                        ?>
+                        <div class="content"><?php echo substr($pods->get_field('content'), 0, 164).$trailer; ?></div>
+                        <div class="content"><a href="<?php echo $pods->get_field('guid'); ?>">Read more</a></div>
                         <br />
                     </li>
                     <?php endwhile; ?>
