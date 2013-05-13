@@ -6,7 +6,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">		
         <meta name="viewport" content="width=device-width">
 
-        <title>Wesfarmers | <?php echo $title; ?></title>
+        <title>Wesfarmers Insurance</title>
 
         <link rel="shortcut icon" href="/favicon.ico">
         <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/min/?g=css" type="text/css" media="screen" title="no title" charset="utf-8">
@@ -25,7 +25,12 @@
             <div class="wrapper clearfix">
                 <div class="left">Wesfarmers Share Price $40.29  <span>5 April 2013 10:26:53 AEST</span></div>
                 
-                <div class="right"><img src="<?php echo get_stylesheet_directory(); ?>/img/example-linkedin.png" alt="Linkedin Example" /></div>
+                <div class="right">
+                    <script src="//platform.linkedin.com/in.js" type="text/javascript">
+                     lang: en_US
+                    </script>
+                    <script type="IN/FollowCompany" data-id="1046002" data-counter="right"></script>
+                </div>
             </div>
         </div>
         
