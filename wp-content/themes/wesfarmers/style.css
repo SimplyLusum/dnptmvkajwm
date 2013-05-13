@@ -53,7 +53,7 @@ nav { float: right; }
     -moz-border-radius-bottomleft: 140px;
     border-bottom-left-radius: 140px;
 }
-#slider { width: 100%; height: 335px; border-top: 10px solid #255f38; }
+#slider { width: 100%; height: 345px; }
 #slider > .slide { width: 100%; height: 335px; background-color: transparent; background-position: 0 0; background-repeat: no-repeat; }
 #slider > .slide > .content { position: absolute; top: 70px; right: 0; width: 360px; padding: 30px; background: url(./img/slide-bg.png) 0 0 repeat; }
 #slider > .slide > .content > .title { float: left; padding: 25px 80px 15px 0; border-top: 3px solid #b2bb1c; font-family: "futura-pt",sans-serif; font-size: 26px; color: #fff; text-transform: uppercase; }
@@ -89,8 +89,8 @@ aside { width: 300px; float: left; }
 
 /* footer start */
 
-#footer-logo { margin-bottom: 50px; }
-#footer-logo > li { float: left; margin-right: 5px; }
+#footer-logo { margin-bottom: 50px; text-align: center; }
+#footer-logo > li { display: inline-block; }
 #footer-logo > li.last { margin-right: 0; }
 footer { padding: 30px 0; color: #fff; border-top: 25px solid #d1ddd4; width: 100%; background: url(./img/footer-bg.png) top center repeat-x; }
 footer a { color: #fff; }
@@ -138,10 +138,11 @@ footer a { color: #fff; }
 
 #latest-news > ul > li { padding-bottom: 20px; }
 #latest-news > ul > li > .title { font-weight: bold; color: #002d50; padding: 0; margin: 0; }
+#latest-news > ul > li > .title a { color: #002d50; }
 #latest-news > ul > li > p { padding: 0; margin: 0; }
-#latest-news > ul > li > p > a { font-weight: bold; color: #666; background: url(/../img/arrow-right-grey.png) 100% 60% no-repeat; }
+#latest-news > ul > li > p > a { font-weight: bold; color: #666; background: url(img/arrow-right-grey.png) 100% 60% no-repeat; }
 #latest-news > ul > li.last { }
-#latest-news > ul > li.last > a { color: #046229; font-weight: bold; background: url(/../img/arrow-right-green.png) 100% 60% no-repeat; }
+#latest-news > ul > li.last > a { color: #046229; font-weight: bold; background: url(img/arrow-right-green.png) 100% 60% no-repeat; }
 
 /* === CONTACT US === */
 #brand-list { width: 100%; }
@@ -160,5 +161,5 @@ footer a { color: #fff; }
 /* === NEWS === */
 #news-list > li > .title { color: #046229; font-size: 14px; font-weight: bold; margin: 0; padding: 0; }
 #news-list > li > .content { maragin: 20px 0; }
-
+#news-list a { color:#046229; }
 /* ------ page specific styles end ------ */
