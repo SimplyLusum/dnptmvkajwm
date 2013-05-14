@@ -14,7 +14,7 @@ $(function(){
                 width: 200,
                 height: 150,
                 method: 'resize',
-                fitDirection: 'center center', 
+                fitDirection: 'top center', 
                 maxEnlargement: 1
         });
     }

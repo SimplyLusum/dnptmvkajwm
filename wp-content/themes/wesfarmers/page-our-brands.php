@@ -9,8 +9,24 @@
 <?php $pods = new Pod('brand'); $pods->find(array('limit' => -1, 'orderby' => 'brand_sort_order ASC')); ?>
             <article class="clearfix">
                 <?php the_content(); ?>
-                <ul id="brand-list" class="clearfix">
-                    <?php while ($pods->fetchRecord()) : ?>
+                <?php $groups = array(); ?>
+                <?php $second = false; ?>
+                <?php $groupnumber = 1; ?>
+                <?php while ($pods->fetchRecord()) :
+                    if (!$second) {
+                        $groups[$i] = $pods;
+                        $second = true;
+                    } else {
+                        $groups[$i] = $pods;
+                        $i++;
+                        $second = false;
+                    }
+                    endwhile; ?>
+                <?php print_r($groups); ?>
+                
+                    <?php foreach ($groups as $key => $group) : ?>
+                <ul class="brand-list" class="clearfix">
+                    <?php foreach ($group as $pod) : ?>
                     <?php if ($pods->get_field('show_in_our_brands') == '1') : ?>
                     <?php $logo = $pods->get_field('brand_logo'); ?>
                     <li>
@@ -18,8 +34,11 @@
                         <p><?php echo $pods->get_field('brand_description'); ?></p>
                     </li>
                     <?php endif; ?>
-                    <?php endwhile; ?>
+                    <?php endforeach; ?>
+                    
+                    
                 </ul>
+                    <?php endforeach; ?>
             </article>
 
             <aside>
